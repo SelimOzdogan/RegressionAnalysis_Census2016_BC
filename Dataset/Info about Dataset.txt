@@ -1,0 +1,100 @@
+46100051.csv
+46100051_MetaData.csv
+temp.csv
+
+
+
+
+
+
+
+
+
+
+## Data
+columnname = ''
+df[columnname].value_counts())
+df[columnname].unique()
+
+df.head()
+
+df.shape
+
+duplicateRowsDF = df1[df1.duplicated()]
+
+df.notnull().sum()
+
+- the Data has 3311280 data points and 18 features
+- REF_DATE is for the year of the data
+    - 2008, 2019
+- GEO is for the location
+    - it has 442 unique values
+    - 'Shelburne, Town', 'Thunder Bay, Unorganized, Unorganized', 'Comox Valley C (Puntledge - Black Creek), 'Regional district electoral area, 'Bulkley-Nechako A, Regional district electoral area'
+- Sex of property owner is for the gender
+    - Female, Total, all sex of property owner categories, Male
+- Family type	Owner characteristics	Estimates
+    - Persons not in census family, 
+    - Couple family with children
+    - Couple family without children
+    - Couple family
+    - Lone-parent family
+    - Total, all family categories      
+- Owner characteristics	
+'Total, all employment status categories', 'Employed',
+       'Not employed',
+       "Total, all home buyer's amount claimant categories",
+       "Owner who claimed the home buyer's amount",
+       "Owner who did not claim the home buyer's amount",
+       'Total, all age groups', 'Under 35 years old',
+       '35 to 54 years old', '55 years old and over'
+- Estimates
+'Proportion of owners by geography',
+       'Sex of property owner, percentage', 'Family type, percentage',
+       'Owner characteristics, percentage',
+       'Average of total assessment value',
+       'Median of total assessment value', 'Average total family income',
+       'Median total family income', 'Average family size'
+- VALUE
+
+
+
+
+
+
+
+
+
+
+-------------------------
+
+
+
+
+
+
+
+
+
+
+### Functions
+- I created 2 function for EDA
+- Eda
+    - Drop Null values in Value column
+     - Drop some rows if UOM column has 'Percent' 
+         - because I do not need the information
+     - Drop some rows if GEO column has 'Shelburne, Town' or 'Simonds, Parish'
+         - because I will use pivot function and these data have some duplication
+         - I applied df1.duplicated() function to find duplicate data, the function finds duplicated rows based on all colums
+         (https://thispointer.com/pandas-find-duplicate-rows-in-a-dataframe-based-on-all-or-selected-columns-using-dataframe-duplicated-in-python/)
+     - Drop unnessessary columns
+         - ['SYMBOL', 'TERMINATED', 'STATUS', 'DGUID', 'COORDINATE','VECTOR', 'DECIMALS',
+              'SCALAR_FACTOR', 'SCALAR_ID', 'UOM', 'UOM_ID']
+     - Rename columns to easyly access
+     - Transform Categorycal data to 
+     - Split to data for Train and test by year.
+ - xx
+     - Reset the index
+     - Pivot the data by 'Region','Gender','Family','Owner' with using 'Est' column
+     (https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.pivot.html)
+ 
+
